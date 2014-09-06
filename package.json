@@ -1,0 +1,26 @@
+{
+	"name": "resilient-mailer-mailjet",
+	"version": "0.2.0",
+	"description": "Mailjet provider implementation for resilient-mailer",
+
+	"license": "MIT",
+	"author": "James Billingham <james@jamesbillingham.com> (http://jamesbillingham.com)",
+
+	"main": "lib/mailjet-provider.js",
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/billinghamj/resilient-mailer-mailjet.git"
+	},
+
+	"scripts": {
+		"test": "node test.js"
+	},
+
+	"dependencies": {
+		"form-data": "~0.1.3"
+	},
+
+	"devDependencies": {
+	}
+}
