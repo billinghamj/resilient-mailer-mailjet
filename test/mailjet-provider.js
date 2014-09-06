@@ -59,10 +59,7 @@ test('handles api errors correctly', function (t) {
 
 	var server = setupTestServer(t,
 		function (request, response, body) {
-			var error = JSON.stringify({ message: 'generic fail' });
-
-			response.writeHead(503, { 'Content-Length': error.length });
-			response.write(error);
+			response.writeHead(503);
 			response.end();
 		},
 
@@ -100,10 +97,7 @@ test('check lack of callback', function (t) {
 
 	var server = setupTestServer(t,
 		function (request, response, body) {
-			var error = JSON.stringify({ message: 'generic fail' });
-
-			response.writeHead(503, { 'Content-Length': error.length });
-			response.write(error);
+			response.writeHead(503);
 			response.end();
 
 			server.close();
