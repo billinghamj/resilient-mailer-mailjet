@@ -1,6 +1,6 @@
 {
 	"name": "resilient-mailer-mailjet",
-	"version": "0.2.0",
+	"version": "0.1.0",
 	"description": "Mailjet provider implementation for resilient-mailer",
 
 	"license": "MIT",
