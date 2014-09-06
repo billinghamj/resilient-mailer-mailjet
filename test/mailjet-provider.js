@@ -58,7 +58,7 @@ test('handles api errors correctly', function (t) {
 	t.plan(4);
 
 	var server = setupTestServer(t,
-		function (request, response, body) {
+		function (request, response) {
 			response.writeHead(503);
 			response.end();
 		},
@@ -96,7 +96,7 @@ test('check lack of callback', function (t) {
 	t.plan(2);
 
 	var server = setupTestServer(t,
-		function (request, response, body) {
+		function (request, response) {
 			response.writeHead(503);
 			response.end();
 
@@ -122,15 +122,7 @@ function setupTestServer(t, handler, callback) {
 		t.equal(request.method, 'POST');
 		t.equal(request.url, '/v3/send/message');
 
-		body = '';
-
-		request.on('data', function (chunk) {
-			body += chunk;
-		});
-
-		request.on('end', function () {
-			handler(request, response, body);
-		});
+		handler(request, response);
 	});
 
 	server.listen(function () {
